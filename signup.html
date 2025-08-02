@@ -6,14 +6,15 @@
     <title>Signup</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="validation.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
 
         <!-- Header -->
         <h1>Signup</h1>
-        <form>
-
+        <form id="form">
+            <p id="error-message"></p>
             <div>
                 <!-- Putting the svg inside the label makes sure that if the user clicks the icon(svg), it'll automatically show cursor inside the input field -->
                 <label for="firstname-input">

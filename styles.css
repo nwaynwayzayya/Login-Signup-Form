@@ -76,5 +76,104 @@ form label {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
+
+form label svg {
+    fill: var(--base-color);
+}
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 105ms ease;
+}
+
+/* These below will effect the input boxes */
+form input:hover {
+    border-color: var(--accent-color);
+}
+
+/* Focus means -- the input box is clicked */
+form input:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+/* This will select the parent 'div' that has the children with a focus on input */
+/* Inside this div, we pick the labell -- the direct children combinator ">" */
+div:has(input:focus) > label {
+    background-color: var(--text-color);
+}
+
+form input::placeholder {
+    color: var(--text-color);
+}
+
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    /* "em" means the times of the fontsize, so .85em means the fontsize of the word inside the button */
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--text-color);
+}
+
+form button:focus {
+    outline: none;
+    background-color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Media queries for responsiveness */
+
+/* Max width: 1100px */
+@media(max-width: 1100px) {
+    .wrapper {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+
+/* To change the color if incorrect */
+form div.incorrect label {
+    background-color: red;
+}
+
+.incorrect input {
+    border-color: red;
+}
+
+#error-message {
+    color: red;
+}
+
 
